@@ -1,7 +1,7 @@
 # ambari_build_tools
 create development environment and build rpms for apache ambari
 
-# pre-requirement
+# requirements
 a centos7 instance(with python2.7) or docker
 
 # usage
