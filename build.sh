@@ -3,6 +3,7 @@ AMBARI_VERSION=$1
 yum -y install java-1.8.0-openjdk-devel
 yum -y install wget
 yum -y install gcc gcc-c++ kernel-devel
+yum -y install rpm-build
 
 mkdir -p /root/ambari_build && cd /root/ambari_build
 
@@ -23,7 +24,7 @@ wget https://dlcdn.apache.org/ambari/ambari-$AMBARI_VERSION/apache-ambari-$AMBAR
 tar xfvz apache-ambari-$AMBARI_VERSION-src.tar.gz
 cd apache-ambari-$AMBARI_VERSION-src
 mvn versions:set -DnewVersion=$AMBARI_VERSION.0.0
- 
+
 pushd ambari-metrics
 mvn versions:set -DnewVersion=$AMBARI_VERSION.0.0
 popd
